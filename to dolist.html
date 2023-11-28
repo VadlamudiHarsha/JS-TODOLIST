@@ -1,0 +1,102 @@
+<html>
+    <head>    
+      <style>    
+        body{
+            background-image: url(./todolist.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }         
+    
+     #ha1{
+        position: relative;
+        padding:7px;
+        margin: 20px;
+        border-radius: 20px;
+        width: 430px;
+        top: 305px;
+        left:440;
+     }
+     #ha2:focus{
+        outline: none;
+      
+        
+     }
+     #ha3{
+        width: 90px;
+        height: 30px;
+        position: relative;
+        left: 28px;
+        border-radius: 25px;
+
+
+     }
+     #ha2{
+        width: 200px;
+        height: 30px;
+        
+     }
+      </style>
+    </head>
+    <body>
+       
+        <div id="ha1">
+            <input type="text" id="ha2" placeholder="Type Something Here">
+            <button id="ha3">ADD</button>
+            <ul  id="ha4" style="list-style-type: none;"><H2></H2></ul>
+        </div>
+     
+        <script>
+            let a=document.getElementById("ha3");
+             a.addEventListener("click",()=>{
+             if(ha2.value==""){
+               alert("Add Something Into ToDo List");
+               }
+               else{
+                let b=document.getElementById("ha4");
+                let c=document.createElement("li");
+                c.innerHTML=ha2.value;
+                b.appendChild(c);
+                c.style.position="relative";
+                c.style.right="45px";
+                c.style.fontSize="20px";
+
+                let d=document.createElement("button");
+                d.style.position="relative";
+                d.style.width="80px";
+                d.style.height="30px";
+                d.style.borderRadius="25px";
+                d.style.left="10px"
+                d.style.borderColor="green";
+                d.style.color="green";
+                d.innerText="Done";
+                c.appendChild(d);
+                d.addEventListener("click",()=>{
+                c.style.textDecoration="line-through"
+               });
+
+               let e=document.createElement("button");
+               e.innerText="Delete";
+               c.appendChild(e);
+               e.style.position="relative";
+               e.style.width="80px";
+               e.style.height="30px";
+               e.style.left="35px";
+               e.style.borderRadius="25px";
+               e.style.borderColor="red";
+               e.style.color="red";
+               e.addEventListener("click",()=>{
+               c.remove();
+               e.style.margin="8px";
+               })
+               
+                 var f=document.getElementById("ha2");
+                 f.value="";
+              }
+            })
+                
+
+
+            
+        </script>
+    </body>
+</html>
